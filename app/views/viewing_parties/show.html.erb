@@ -19,8 +19,7 @@
    <div class="divider py-1 bg-dark"></div>
    <h3>Summary </h3>
    <p><%= @movie.summary %></p>
-   <%links = StreamingFacade.streaming_links(@movie.imdb_id)%>
-   <%links.each do |streaming|%> %>
+   <%@links.each do |streaming|%> %>
    <%= link_to(image_tag("#{streaming.provider.to_s}.png", size: "250"), streaming.link) %>
    <% end%>
 </div>

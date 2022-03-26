@@ -10,7 +10,7 @@
 <%object.each do |movie| %>
 <div class = "row">
     <div class = "col-md d-flex justify-content-center">
-    <%= link_to "#{movie.title}", user_movie_path(@user, movie.id) %>
+    <%= link_to "#{movie.title} (#{movie.release_year})", user_movie_path(@user, movie.id) %>
     </div>
     <div class = "col-md d-flex justify-content-center">
         <p>Vote Average <%= movie.vote_average %></p>

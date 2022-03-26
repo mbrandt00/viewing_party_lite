@@ -2,8 +2,7 @@
 
 class Movie
 
-  attr_reader :id, :title, :genres, :summary, :vote_average, :duration, :minutes, :poster_path, :imdb_id
-
+  attr_reader :id, :title, :genres, :summary, :vote_average, :duration, :minutes, :poster_path, :imdb_id, :release_year
   def initialize(data)
     @id = data[:id]
     @title = data[:title]
@@ -14,6 +13,7 @@ class Movie
     @minutes = data[:runtime]
     @poster_path = data[:poster_path]
     @imdb_id = data[:imdb_id]
+    @release_year = data[:release_date][0..3]
   end
 
   def time_format(minutes)

@@ -24,7 +24,7 @@ class MovieFacade
 
   def self.top_rated
     @top_rated = []
-    MovieService.top_rated[:results].each do |data|
+    MovieService.top_rated[:results].first(20).each do |data|
       top_movie = MovieService.movie(data[:id])
       @top_rated << Movie.new(top_movie)
     end

@@ -2,6 +2,8 @@
 
 Rails.application.routes.draw do
   get '/', to: 'welcome#index'
+  get '/login', to: 'users#login_form'
+  post '/login', to: 'users#login_user'
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
   get '/users/:id/discover', to: 'users#discover'
@@ -11,5 +13,5 @@ Rails.application.routes.draw do
     resources :viewing_parties, only: [:new, :index, :show]
   end
     post '/users/:user_id/viewing_parties/new', to: 'viewing_parties#create'
-    
+
 end

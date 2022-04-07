@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'the discover movies page' do
   before (:each) do
-    @u1 = User.create!(name: 'Mr 1', email: 'Test1@test.com')
+    @u1 = User.create!(name: 'Mr 1', email: 'Test1@test.com', password: "test", password_confirmation: "test")
   end
   it 'has a button for top rated movies' do
     visit "/users/#{@u1.id}/discover"

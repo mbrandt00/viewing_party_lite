@@ -3,6 +3,7 @@
 
 <div class = "container">
 <%= button_to "Create New User", '/register', method: :get %>
+<%= button_to "Log In", '/login', method: :get %>
   <div class="registered">
     <% @users.each do |user| %>
       <h3><%= link_to(user.name, user_path(user)) %></h3>

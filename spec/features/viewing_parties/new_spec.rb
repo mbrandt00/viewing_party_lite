@@ -1,9 +1,13 @@
 require 'rails_helper'
 RSpec.describe 'new viewing party' do
     before :each do
-        @user_1 = User.create(name: 'Test1', email: 'test1@yahoo.com', password: "user1", password_confirmation: "user1")
+        @user_1 = User.create(name: 'Test1', email: 'test1@test.com', password: "user1", password_confirmation: "user1")
         @user_2 = User.create(name: 'Test2', email: 'test2@yahoo.com', password: "user1", password_confirmation: "user1")
         movie = MovieFacade.movie(235)
+        visit '/login'
+        fill_in 'Email', with: "test1@test.com"
+        fill_in 'Password', with: "user1"
+        click_on 'Log In'
         visit(user_movie_path(@user_1, 235))
         click_button("Create Viewing Party for Stand by Me")
     end
